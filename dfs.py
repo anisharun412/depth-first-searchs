@@ -8,12 +8,11 @@ def depth_first_search(graph, current_node, visited_nodes, traversal_order):
     traversal_order.append(current_node)
     visited_nodes[current_node] = True
 
-    for neighbor in sorted(graph[current_node]):
+    for neighbor in graph[current_node]:
         if not visited_nodes[neighbor]:
             depth_first_search(graph, neighbor, visited_nodes, traversal_order)
 
     return traversal_order
-
 
 graph = defaultdict(list)
 number_of_nodes, number_of_edges = map(int, input().split())
